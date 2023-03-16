@@ -6,5 +6,6 @@ router.get('/', mainControllers.getHome)
 router.get('/pokemon', mainControllers.getPokemon)
 router.get('/buscar', mainControllers.buscarUno)
 router.get('/buscarTodos', mainControllers.buscarTodos)
+router.get('/todos2', mainControllers.todos2)
 
 module.exports = router
