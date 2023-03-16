@@ -32,7 +32,7 @@ const Pokemon = {
     buscarTodos: async (req, res) => {
         let acum = [];
         let todos = []
-        fetch('https://pokeapi.co/api/v2/pokemon?')
+        fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=64')
         .then(pokedex => pokedex.json())
         .then(result => {
             let facu = result.results;
@@ -46,7 +46,7 @@ const Pokemon = {
             )).then(data => {
                 for(let i = 0; i < data.length ; i++){
                     pokemon = {
-                        nombre: data[i].name,
+                        name: data[i].name,
                         img: data[i].sprites.other.dream_world.front_default,
                         hp: data[i].stats[0].base_stat,
                         exp: data[i].base_experience,
